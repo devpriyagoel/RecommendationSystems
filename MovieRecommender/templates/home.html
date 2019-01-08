@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="content-section">
+		<form method="POST" action="{{ url_for('home') }}">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">Get Recommendations</legend>
+				<div class="form-group">
+					{{ form.genre.label(class="form-control-label") }}
+					{% if form.genre.errors %}
+						{{ form.genre(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.genre.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.genre(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.ldur.label(class="form-control-label") }}
+					{% if form.ldur.errors %}
+						{{ form.ldur(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.ldur.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.ldur(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.udur.label(class="form-control-label") }}
+					{% if form.udur.errors %}
+						{{ form.udur(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.udur.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.udur(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.lyear.label(class="form-control-label") }}
+					{% if form.lyear.errors %}
+						{{ form.lyear(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.lyear.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.lyear(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.uyear.label(class="form-control-label") }}
+					{% if form.uyear.errors %}
+						{{ form.uyear(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.uyear.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.uyear(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+		 
+			</fieldset>
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-info") }}
+			</div>
+		</form>
+	</div>
+	
+{% endblock content %}
+
